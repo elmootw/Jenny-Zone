@@ -76,7 +76,8 @@ main section.hero{ border-top: 0; }
 .hint{ font-size: .85rem; }
 .works-list{ display: grid; gap: 40px; margin-top: 24px; }
 .work{ margin: 0; }
-.work figcaption{ margin-top: 10px; font-size: .95rem; }
+.work.is-portrait{ max-width: 440px; width: 100%; margin: 0 auto; }
+.empty{ padding: 40px 0; text-align: center; }
 
 .compare{
   position: relative;
