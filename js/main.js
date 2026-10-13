@@ -1,6 +1,6 @@
 // 作品照片：images/01-b.jpg（整理前）配 images/01-a.jpg（整理後），依此類推。
 // 新增一組就在這裡加上編號。直式、橫式都可以，會依照片比例自動顯示。
-const pairs = [];
+const pairs = ['01', '02', '03'];
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
