@@ -3,277 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jenny 居家整理｜讓家，回到最舒服的樣子</title>
-<meta name="description" content="Jenny 居家整理師，提供到府收納規劃、陪伴式整理教學與空間改造服務，陪你找回清爽有序的居家日常。">
+<title>Jenny 居家整理</title>
+<meta name="description" content="Jenny 居家整理師，到府收納規劃與陪伴式整理，服務範圍以雙北為主。">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="progress-line" id="progressLine"></div>
-
-<header class="site-header" id="siteHeader">
+<header class="site-header">
   <div class="container header-inner">
     <a href="#top" class="brand">Jenny<span class="brand-sub">居家整理</span></a>
-    <nav class="nav" id="mainNav">
-      <a href="#about" data-nav>關於我</a>
-      <a href="#services" data-nav>服務項目</a>
-      <a href="#works" data-nav>作品案例</a>
-      <a href="#reviews" data-nav>客戶好評</a>
-      <a href="#contact" data-nav>聯絡我</a>
-    </nav>
-    <a href="#contact" class="btn btn-outline nav-cta">預約諮詢</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="#contact" class="header-link">聯絡我</a>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-motif" aria-hidden="true">
-      <svg viewBox="0 0 200 200" fill="none">
-        <circle cx="100" cy="100" r="98" stroke="currentColor" stroke-width="0.6"/>
-        <path d="M40 130 C 70 90, 130 90, 160 130" stroke="currentColor" stroke-width="0.6"/>
-      </svg>
-    </div>
-    <div class="container hero-inner">
-      <p class="eyebrow reveal">居家整理 ‧ 陪伴式收納</p>
-      <h1 class="reveal delay-1">讓家，<br>回到最舒服的樣子。</h1>
-      <p class="hero-desc reveal delay-2">
-        我是 Jenny，一位居家整理師。透過傾聽生活習慣、量身規劃收納系統，
-        陪伴你一起整理，找回清爽、好維持的居家日常。
-      </p>
-      <div class="hero-actions reveal delay-3">
-        <a href="#contact" class="btn btn-primary">預約免費諮詢</a>
-        <a href="#services" class="btn btn-text">了解服務內容 →</a>
-      </div>
-    </div>
+  <section class="hero container">
+    <h1>讓家，回到最舒服的樣子。</h1>
+    <p>到府收納規劃與陪伴式整理，從生活習慣出發，整理出好維持的家。</p>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section about">
-    <div class="container split">
-      <div class="split-media reveal">
-        <div class="placeholder-frame portrait">
-          <span class="placeholder-icon">◎</span>
-          <span class="placeholder-text">Jenny 個人照片<br>預留位置</span>
-        </div>
-      </div>
-      <div class="split-content">
-        <p class="eyebrow reveal">關於 Jenny</p>
-        <h2 class="reveal delay-1">用整理，陪你重新認識家。</h2>
-        <p class="reveal delay-2">
-          〔此處為自我介紹預留文字〕嗨，我是 Jenny。我相信整理不只是把東西收好，
-          而是重新梳理生活的方式——了解每個人的使用習慣後，規劃一套簡單、
-          好維持的收納系統，讓家能一直保持在舒服的狀態，而不是整理完又打回原形。
-        </p>
-        <ul class="value-list reveal delay-3">
-          <li><span class="dot"></span>先傾聽，再動手：從生活習慣出發規劃收納方式</li>
-          <li><span class="dot"></span>陪伴式整理：全程一起參與，不評判、不丟包</li>
-          <li><span class="dot"></span>簡單好維持：系統設計以「長期好維持」為優先</li>
-          <li><span class="dot"></span>〔相關證照 / 經歷 / 課程預留〕</li>
-        </ul>
-      </div>
-    </div>
+  <section id="works" class="works container">
+    <h2>Before / After</h2>
+    <p class="hint">拖曳中間的線，看整理前後的差別</p>
+    <div class="works-list" id="worksList"></div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section services">
-    <div class="container">
-      <p class="eyebrow center reveal">服務項目</p>
-      <h2 class="center reveal delay-1">從單一空間到全屋整理</h2>
-      <p class="section-desc center reveal delay-2">依照你的需求與空間狀況，提供彈性的整理服務。</p>
-
-      <div class="cards reveal delay-3">
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg>
-          </div>
-          <h3>到府收納規劃</h3>
-          <p>依空間格局與生活習慣，設計專屬收納方案，提升空間使用效率。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-4.5-9.5-9C.7 8.2 2 4.5 5.5 4c2-.3 3.6.8 4.5 2.2C10.9 4.8 12.5 3.7 14.5 4c3.5.5 4.8 4.2 3 8-2.5 4.5-9.5 9-9.5 9Z"/></svg>
-          </div>
-          <h3>陪伴式整理教學</h3>
-          <p>不是幫你整理完就走，而是陪你一起動手，學會方法、養成習慣。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-          </div>
-          <h3>單一 / 全屋整理</h3>
-          <p>可選擇單一空間（如衣櫃、廚房）或全屋整體規劃，彈性搭配時數。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 4h16v4H4z"/><path d="M6 8v11a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>
-          </div>
-          <h3>搬家前後整理</h3>
-          <p>搬家前斷捨離、搬家後開箱歸位，讓新家一開始就保持整齊。</p>
-        </div>
-      </div>
-
-      <!-- PROCESS -->
-      <div class="process reveal delay-4">
-        <h3 class="process-title">服務流程</h3>
-        <div class="steps">
-          <div class="step">
-            <span class="step-num">01</span>
-            <p class="step-title">線上諮詢</p>
-            <p class="step-desc">了解空間狀況與整理需求</p>
-          </div>
-          <div class="step">
-            <span class="step-num">02</span>
-            <p class="step-title">到府場勘</p>
-            <p class="step-desc">實地丈量、拍照，評估規模</p>
-          </div>
-          <div class="step">
-            <span class="step-num">03</span>
-            <p class="step-title">規劃方案</p>
-            <p class="step-desc">設計收納配置與執行計畫</p>
-          </div>
-          <div class="step">
-            <span class="step-num">04</span>
-            <p class="step-title">到府整理</p>
-            <p class="step-desc">實際執行，陪伴一起動手</p>
-          </div>
-          <div class="step">
-            <span class="step-num">05</span>
-            <p class="step-title">驗收維持</p>
-            <p class="step-desc">成果確認並提供維持建議</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PRICING NOTE -->
-      <div class="pricing-note reveal delay-4">
-        <h3>服務費用說明</h3>
-        <p>
-          目前服務仍在累積作品階段，費用將依「整理時數」或「空間坪數」計算，
-          並提供優惠體驗價，詳細報價將於諮詢後提供。
-        </p>
-        <p class="pricing-sub">
-          ※ 雙北（台北 / 新北）以外地區，需另加收來回交通費用。
-        </p>
-      </div>
-    </div>
+  <section class="services container">
+    <h2>服務</h2>
+    <ul class="service-list">
+      <li><strong>單一空間整理</strong><span>衣櫃、廚房、兒童房等</span></li>
+      <li><strong>全屋整理</strong><span>整體動線與收納規劃</span></li>
+      <li><strong>搬家前後整理</strong><span>斷捨離、開箱歸位</span></li>
+    </ul>
+    <p class="note">費用依時數或坪數計算，諮詢後報價。雙北以外另加交通費。</p>
   </section>
 
-  <!-- WORKS -->
-  <section id="works" class="section works">
-    <div class="container">
-      <p class="eyebrow center reveal">作品案例</p>
-      <h2 class="center reveal delay-1">整理前 × 整理後</h2>
-      <p class="section-desc center reveal delay-2">作品持續累積中，敬請期待更多真實案例更新。</p>
-
-      <div class="works-grid reveal delay-3">
-        <div class="work-item">
-          <div class="placeholder-frame work-frame">
-            <span class="placeholder-icon">▦</span>
-            <span class="placeholder-text">案例 01<br>整理前 / 整理後</span>
-          </div>
-          <p class="work-caption">〔空間名稱，例：更衣室〕</p>
-        </div>
-        <div class="work-item">
-          <div class="placeholder-frame work-frame">
-            <span class="placeholder-icon">▦</span>
-            <span class="placeholder-text">案例 02<br>整理前 / 整理後</span>
-          </div>
-          <p class="work-caption">〔空間名稱，例：廚房〕</p>
-        </div>
-        <div class="work-item">
-          <div class="placeholder-frame work-frame">
-            <span class="placeholder-icon">▦</span>
-            <span class="placeholder-text">案例 03<br>整理前 / 整理後</span>
-          </div>
-          <p class="work-caption">〔空間名稱，例：兒童房〕</p>
-        </div>
-        <div class="work-item">
-          <div class="placeholder-frame work-frame">
-            <span class="placeholder-icon">▦</span>
-            <span class="placeholder-text">案例 04<br>整理前 / 整理後</span>
-          </div>
-          <p class="work-caption">〔空間名稱，例：客廳〕</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section id="reviews" class="section reviews">
-    <div class="container">
-      <p class="eyebrow center reveal">客戶好評</p>
-      <h2 class="center reveal delay-1">來自客戶的真實回饋</h2>
-      <p class="section-desc center reveal delay-2">評價陸續更新中，以下為預留版型。</p>
-
-      <div class="reviews-grid reveal delay-3">
-        <div class="review-card">
-          <p class="review-quote">「〔預留客戶評價文字，將於服務完成後更新真實回饋〕」</p>
-          <p class="review-author">— 〔客戶名稱 / 匿名〕</p>
-        </div>
-        <div class="review-card">
-          <p class="review-quote">「〔預留客戶評價文字，將於服務完成後更新真實回饋〕」</p>
-          <p class="review-author">— 〔客戶名稱 / 匿名〕</p>
-        </div>
-        <div class="review-card">
-          <p class="review-quote">「〔預留客戶評價文字，將於服務完成後更新真實回饋〕」</p>
-          <p class="review-author">— 〔客戶名稱 / 匿名〕</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
-    <div class="container contact-inner">
-      <p class="eyebrow center reveal">聯絡我</p>
-      <h2 class="center reveal delay-1">準備好讓家煥然一新了嗎？</h2>
-      <p class="section-desc center reveal delay-2">
-        歡迎透過以下方式與我聯繫，告訴我你的空間困擾，一起討論最適合的整理方案。
-      </p>
-
-      <div class="contact-grid reveal delay-3">
-        <a href="#" class="contact-item">
-          <span class="contact-label">LINE</span>
-          <span class="contact-value">〔LINE ID 預留〕</span>
-        </a>
-        <a href="#" class="contact-item">
-          <span class="contact-label">Instagram</span>
-          <span class="contact-value">〔@ig_account 預留〕</span>
-        </a>
-        <a href="mailto:hello@example.com" class="contact-item">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">〔email 預留〕</span>
-        </a>
-        <a href="tel:+886000000000" class="contact-item">
-          <span class="contact-label">電話</span>
-          <span class="contact-value">〔聯絡電話預留〕</span>
-        </a>
-      </div>
-
-      <div class="contact-cta reveal delay-4">
-        <a href="mailto:hello@example.com" class="btn btn-primary btn-large">立即預約諮詢</a>
-      </div>
-    </div>
+  <section id="contact" class="contact container">
+    <h2>聯絡我</h2>
+    <ul class="contact-list">
+      <li><span>LINE</span><a href="#">〔LINE ID〕</a></li>
+      <li><span>Instagram</span><a href="#">〔@帳號〕</a></li>
+      <li><span>Email</span><a href="#">〔email〕</a></li>
+    </ul>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© <span id="year"></span> Jenny 居家整理．服務範圍以雙北為主，外縣市另加交通費。</p>
-  </div>
+<footer class="site-footer container">
+  <p>© <span id="year"></span> Jenny 居家整理</p>
 </footer>
-
-<button class="back-to-top" id="backToTop" aria-label="回到頂端">↑</button>
 
 <script src="js/main.js"></script>
 </body>

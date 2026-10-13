@@ -1,69 +1,39 @@
+// 作品案例：照片放進 images/，在這裡加一行就會出現在頁面上。
+// 前後兩張照片請用同一個角度、同樣比例拍。
+const cases = [
+  { title: '更衣室', before: 'images/closet-before.jpg', after: 'images/closet-after.jpg' },
+  { title: '廚房',   before: 'images/kitchen-before.jpg', after: 'images/kitchen-after.jpg' },
+];
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Header scroll state + progress bar
-const header = document.getElementById('siteHeader');
-const progressLine = document.getElementById('progressLine');
-const backToTop = document.getElementById('backToTop');
+const list = document.getElementById('worksList');
 
-function onScroll(){
-  const scrollTop = window.scrollY;
-  header.classList.toggle('scrolled', scrollTop > 10);
-  backToTop.classList.toggle('show', scrollTop > 500);
+cases.forEach(c => {
+  const item = document.createElement('figure');
+  item.className = 'work';
+  item.innerHTML = `
+    <div class="compare" style="--pos: 50%">
+      <img class="compare-img" src="${c.after}" alt="${c.title}整理後" loading="lazy">
+      <img class="compare-img compare-before" src="${c.before}" alt="${c.title}整理前" loading="lazy">
+      <span class="tag tag-before">Before</span>
+      <span class="tag tag-after">After</span>
+      <span class="compare-handle" aria-hidden="true"></span>
+      <input class="compare-range" type="range" min="0" max="100" value="50"
+             aria-label="${c.title}：拖曳比較整理前後">
+    </div>
+    <figcaption>${c.title}</figcaption>
+  `;
 
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  progressLine.style.width = progress + '%';
-}
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
-
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Mobile nav toggle
-const menuToggle = document.getElementById('menuToggle');
-const mainNav = document.getElementById('mainNav');
-
-menuToggle.addEventListener('click', () => {
-  const isOpen = mainNav.classList.toggle('open');
-  menuToggle.classList.toggle('open', isOpen);
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-});
-
-mainNav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mainNav.classList.remove('open');
-    menuToggle.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
+  const compare = item.querySelector('.compare');
+  item.querySelector('.compare-range').addEventListener('input', e => {
+    compare.style.setProperty('--pos', e.target.value + '%');
   });
+
+  // 照片還沒放進來時，顯示灰底佔位而不是破圖
+  item.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', () => compare.classList.add('is-empty'), { once: true });
+  });
+
+  list.appendChild(item);
 });
-
-// Active nav link highlight
-const sections = document.querySelectorAll('main section[id]');
-const navLinks = document.querySelectorAll('.nav a[data-nav]');
-
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.getAttribute('id');
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-      });
-    }
-  });
-}, { rootMargin: '-50% 0px -45% 0px' });
-
-sections.forEach(section => sectionObserver.observe(section));
-
-// Reveal on scroll
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
